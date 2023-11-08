@@ -8,6 +8,10 @@ public class Biblioteca {
     private List<Livro> livros;
 
     public Biblioteca(List<Livro> livros) {
-        this.livros = new ArrayList<>();
+        this.livros = livros;
+    }
+
+    public void adicionaLivros(Livro livro) {
+        livros.add(livro);
     }
 }
