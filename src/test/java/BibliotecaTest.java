@@ -11,7 +11,8 @@ import static org.junit.jupiter.api.Assertions.fail;
 class BibliotecaTest {
     @Test
     void testAdicionarLivro() {
-        Biblioteca biblioteca = new Biblioteca();
+        List<Livro> livros = null;
+        Biblioteca biblioteca = new Biblioteca(null);
         Livro livro = new Livro("A revolução dos bichos", "George Orwell", 123456);
         biblioteca.adicionarLivro(livro);
         //Assertions.assertTrue(biblioteca.contemLivro(livro));

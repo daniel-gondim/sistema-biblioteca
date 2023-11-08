@@ -1,12 +1,13 @@
 package org.vvs;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Biblioteca {
 
-//    private ArrayList<Livro> livros;
-//
-//    public Biblioteca(ArrayList<Livro> livros) {
-//        this.livros = new ArrayList<>(livros);
-//    }
+    private List<Livro> livros;
+
+    public Biblioteca(List<Livro> livros) {
+        this.livros = new ArrayList<>();
+    }
 }
