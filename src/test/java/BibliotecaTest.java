@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.vvs.Biblioteca;
+import org.vvs.Livro;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,7 +12,7 @@ class BibliotecaTest {
     @Test
     void testAdicionarLivro() {
         Biblioteca biblioteca = new Biblioteca();
-        Livro livro = new Livro("A Revolução dos Bichos", "George Orwell");
+        Livro livro = new Livro("A revolução dos bichos", "George Orwell", 123456);
         biblioteca.adicionarLivro(livro);
         //Assertions.assertTrue(biblioteca.contemLivro(livro));
     }
