@@ -5,11 +5,15 @@ import org.vvs.Biblioteca;
 import java.util.Arrays;
 import java.util.List;
 
-public class BibliotecaTest {
+import static org.junit.jupiter.api.Assertions.fail;
+
+class BibliotecaTest {
     @Test
-    void testSearchBooksByTitleWithAvailableCopies() {
-        // Passo 1: Configurar o ambiente de teste
-        Biblioteca biblioteca = new Biblioteca(livros);
-        
+    void testAdicionarLivro() {
+        Biblioteca biblioteca = new Biblioteca();
+        Livro livro = new Livro("A Revolução dos Bichos", "George Orwell");
+        biblioteca.adicionarLivro(livro);
+        //Assertions.assertTrue(biblioteca.contemLivro(livro));
     }
+
 }
