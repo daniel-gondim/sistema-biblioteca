@@ -14,8 +14,17 @@ public class Biblioteca {
     public void adicionaLivros(Livro livro) {
         livros.add(livro);
     }
+
     public List<Livro> buscaLivroPeloTitulo(String titulo) {
-        return null;
+        List<Livro> livrosEncontrados = new ArrayList<>();
+
+        for (Livro livro : livros) {
+            if (livro.getTítulo().equalsIgnoreCase(titulo) && !livro.isEmprestado()){
+                livrosEncontrados.add(livro);
+            }
+        }
+
+        return livrosEncontrados;
     }
 
     public List<Livro> getLivros() {
