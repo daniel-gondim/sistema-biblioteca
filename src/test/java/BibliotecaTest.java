@@ -36,5 +36,18 @@ class BibliotecaTest {
         Assertions.assertTrue(livrosEncontrados.contains(livro1));
     }
 
+    @Test
+    void testEmprestimoDeLivroBemSucedido() {
+        Usuario usuario = new Usuario("João");
+        Livro livro = new Livro("A Revolução dos Bichos", "George Orwell", 123456, false);
+        Biblioteca biblioteca = new Biblioteca(new ArrayList<>());
+
+        boolean emprestimoRealizado = biblioteca.emprestaLivro(usuario, livro);
+
+        Assertions.assertTrue(emprestimoRealizado);
+        Assertions.assertTrue(livro.isEmprestado());
+    }
+
+
 
 }
