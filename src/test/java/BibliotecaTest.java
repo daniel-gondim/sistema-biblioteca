@@ -4,19 +4,37 @@ import org.vvs.Biblioteca;
 import org.vvs.Livro;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.fail;
 
 class BibliotecaTest {
     @Test
     void testAdicionarLivro() {
         List<Livro> livros = new ArrayList<>();
         Biblioteca biblioteca = new Biblioteca(livros);
-        Livro livro = new Livro("A revolução dos bichos", "George Orwell", 123456);
+        Livro livro = new Livro("A revolução dos bichos", "George Orwell", 123456, false);
         biblioteca.adicionaLivros(livro);
         Assertions.assertTrue(biblioteca.getLivros().contains(livro));
     }
+
+    @Test
+    void testBuscaLivroPorTituloSeLivroNãoEstáEmprestado() {
+
+        List<Livro> livros = new ArrayList<>();
+        Biblioteca biblioteca = new Biblioteca(livros);
+
+        // Cria livros com o mesmo título, mas um deles está emprestado
+        Livro livro1 = new Livro("A Revolução dos Bichos", "George Orwell", 123456, false);
+        Livro livro2 = new Livro("A Revolução dos Bichos", "George Orwell", 123456, true);
+        Livro livro3 = new Livro("A Revolução dos Bichos", "George Orwell", 123456, false);
+        biblioteca.adicionaLivros(livro1);
+        biblioteca.adicionaLivros(livro2);
+        biblioteca.adicionaLivros(livro3);
+
+        List<Livro> livrosEncontrados = biblioteca.buscaLivroPeloTitulo("A Revolução dos Bichos");
+        // garante que apenas os livros que não estão emprestados são retornados
+        Assertions.assertEquals(2, livrosEncontrados.size());
+        Assertions.assertTrue(livrosEncontrados.contains(livro1));
+    }
+
 
 }
