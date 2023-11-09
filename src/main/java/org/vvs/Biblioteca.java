@@ -14,6 +14,9 @@ public class Biblioteca {
     public void adicionaLivros(Livro livro) {
         livros.add(livro);
     }
+    public List<Livro> buscaLivroPeloTitulo(String titulo) {
+        return null;
+    }
 
     public List<Livro> getLivros() {
         return livros;

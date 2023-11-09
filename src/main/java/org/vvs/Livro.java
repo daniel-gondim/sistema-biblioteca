@@ -2,23 +2,26 @@ package org.vvs;
 
 public class Livro {
 
-    private String nome;
+    private String título;
     private String autor;
 
     private float isbn;
 
-    public Livro(String nome, String autor, float isbn) {
-        this.nome = nome;
+    private boolean emprestado;
+
+    public Livro(String título, String autor, float isbn, boolean emprestado) {
+        this.título = título;
         this.autor = autor;
         this.isbn = isbn;
+        this.emprestado = emprestado;
     }
 
-    public String getNome() {
-        return nome;
+    public String getTítulo() {
+        return título;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setTítulo(String título) {
+        this.título = título;
     }
 
     public String getAutor() {
@@ -37,12 +40,7 @@ public class Livro {
         this.isbn = isbn;
     }
 
-    @Override
-    public String toString() {
-        return "Livro{" +
-                "nome='" + nome + '\'' +
-                ", autor='" + autor + '\'' +
-                ", isbn=" + isbn +
-                '}';
+    public boolean isEmprestado() {
+        return emprestado;
     }
 }
