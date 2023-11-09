@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.vvs.Biblioteca;
 import org.vvs.Livro;
+import org.vvs.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,7 +39,7 @@ class BibliotecaTest {
 
     @Test
     void testEmprestimoDeLivroBemSucedido() {
-        Usuario usuario = new Usuario("João");
+        Usuario usuario = new Usuario("Daniel Gondim");
         Livro livro = new Livro("A Revolução dos Bichos", "George Orwell", 123456, false);
         Biblioteca biblioteca = new Biblioteca(new ArrayList<>());
 
@@ -47,7 +48,6 @@ class BibliotecaTest {
         Assertions.assertTrue(emprestimoRealizado);
         Assertions.assertTrue(livro.isEmprestado());
     }
-
 
 
 }
