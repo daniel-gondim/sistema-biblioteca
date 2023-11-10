@@ -34,4 +34,8 @@ public class Biblioteca {
     public void setLivros(List<Livro> livros) {
         this.livros = livros;
     }
+
+    public boolean emprestaLivro(Usuario usuario, Livro livro) {
+        return true;
+    }
 }
